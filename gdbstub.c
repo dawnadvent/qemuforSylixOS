@@ -2345,7 +2345,7 @@ int gdbserver_start(const char *device)
         if (strstart(device, "tcp:", NULL)) {
             /* enforce required TCP attributes */
             snprintf(gdbstub_device_name, sizeof(gdbstub_device_name),
-                     "%s,nowait,nodelay,server", device);
+                     "%s,nowait,nodelay,server,ipv4", device);//ipv4 for SylixOS
             device = gdbstub_device_name;
         }
 #ifndef _WIN32
